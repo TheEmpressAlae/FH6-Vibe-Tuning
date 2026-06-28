@@ -183,3 +183,42 @@ test only one of these:
 - Rear differential acceleration: `86%`
 
 Do not apply both at once.
+
+## Telemetry Review - 2026-06-27 Launch Pull
+
+Source: `telemetry/20260627-213940-miata-drag-10s-fh6-telemetry.jsonl`
+
+### Summary
+
+- Duration: `10.0 s`, `720` packets.
+- Drivetrain: RWD telemetry (`DrivetrainType: 1`).
+- Gear: `2` for the entire run.
+- Speed: `39.4 mph` average, `53.4 mph` maximum.
+- Time to speed: `5 mph` in `0.625 s`, `20 mph` in `1.734 s`, `30 mph` in
+  `2.469 s`, `40 mph` in `3.281 s`, and `50 mph` in `4.734 s`.
+- Throttle: `71.1%` average; `100%` throttle for `194` packets.
+- Brake and handbrake: unused throughout the capture.
+- Rear combined slip: `6.83` average, `32.5` maximum.
+- Front combined slip: `1.26` average, `5.96` maximum.
+- Rear tire temperature: approximately `132-285 F` during the capture.
+
+### Launch Shape
+
+The rear bloomed hard at launch, then hooked into usable drive:
+
+- `0-1 s`: rear slip median `27.9`, speed `0.0-10.0 mph`.
+- `1-2 s`: rear slip median `14.0`, speed `10.2-23.3 mph`.
+- `2-3 s`: rear slip median `5.9`, speed `23.5-36.4 mph`.
+- `3-6 s`: rear slip stayed mostly around `2.8-4.7` while speed climbed into
+  the low `50 mph` range.
+
+### Diagnosis
+
+The launch read supports holding the current tune. It creates smoke immediately
+without staying in runaway wheelspin, then hooks enough to build speed and
+maintain rhythm. That is the desired compromise for learning this RWD setup.
+
+### Next Small Test
+
+No tune change from this pull. Keep gathering mid-smoke and recovery samples
+before changing pressure, differential, camber, or toe again.
