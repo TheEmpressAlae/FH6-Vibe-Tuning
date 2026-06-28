@@ -21,5 +21,9 @@ Forza Horizon 6 project instructions
   full throw, middle is 50% throw, and bottom is click. This physically limits
   how deeply the trigger can be depressed, changing throttle modulation travel
   rather than indicating a tune issue.
+- When a Git commit is requested during tuning or telemetry work, prefer
+  spawning a separate Codex thread/agent to perform the scoped stage/commit so
+  the main thread can continue analysis in parallel. The commit agent must be
+  told the exact files or paths it owns and must not stage unrelated work.
 - Manual shifting is available for drift builds only.
 - The user prefers throatier, meaner sounding cars.
