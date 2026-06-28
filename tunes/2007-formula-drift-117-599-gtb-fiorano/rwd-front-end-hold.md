@@ -223,6 +223,54 @@ maintain rhythm. That is the desired compromise for learning this RWD setup.
 No tune change from this pull. Keep gathering mid-smoke and recovery samples
 before changing pressure, differential, camber, or toe again.
 
+## Telemetry Review - 2026-06-27 Clean Mid-Smoke Pull
+
+Source: `telemetry/20260627-215405-miata-drag-10s-fh6-telemetry.jsonl`
+
+### Summary
+
+- Duration: `10.0 s`, `721` packets.
+- Drivetrain: RWD telemetry (`DrivetrainType: 1`).
+- Raw telemetry gear: `2` for the entire run. Per the gear mapping note, verify
+  against in-game display before treating this as the literal displayed gear.
+- Speed: `41.0 mph` average, `44.9 mph` maximum, `34.5 mph` minimum.
+- Throttle: `45.9%` average; `100%` throttle for `46` packets; near-zero
+  throttle for `162` packets.
+- Brake and handbrake: unused throughout the capture.
+- Rear combined slip: `4.50` average, `9.62` maximum.
+- Front combined slip: `1.64` average, `5.62` maximum.
+- No samples exceeded `10` rear combined slip or `8` front combined slip.
+- Absolute body-slip angle stayed below `39 deg`.
+- Rear tire temperature: approximately `184 F` at capture start in the raw
+  sample and remained controlled in the generated summary.
+
+### Comparison
+
+- Compared with the fresh pull, speed was much tighter: roughly `34-45 mph`
+  instead of `25-55 mph`.
+- Rear slip stayed in the useful singing range rather than runaway smoke:
+  `4.50` average and `9.62` maximum.
+- The throttle-lift recovery pattern is visible in the telemetry: `162`
+  near-zero-throttle packets without brake or handbrake use.
+- The last-second overcook appears mild in the capture: at `9.469 s`, rear slip
+  peaked at `9.62` with `100%` throttle, full steering, `34.7 mph`, and
+  approximately `31 deg` body slip. It did not become a runaway spin inside the
+  logged window.
+
+### Diagnosis
+
+This is the current best reference pull. The tune is producing controlled RWD
+drift behavior, and the driver input pattern is improving: throttle drops are
+recovering the car while the tires keep making usable slip. Understeer is not
+the active problem in this capture.
+
+### Next Small Test
+
+Hold the tune. Do not change camber, toe, pressure, or differential from this
+pull. The next useful data is another clean mid-smoke sample or a recovery
+sample that intentionally captures the moment after a direction change starts
+to overcook.
+
 ## Telemetry Note - Gear Field Mapping
 
 In the U-turn/recovery capture from
