@@ -93,3 +93,47 @@ rotation available without relying only on throttle violence.
   `94-100%`.
 - If entry rotation pushes the nose wide, lower rear deceleration to `12-15%`.
 - If lift-off entries feel nervous, raise rear deceleration to `20-22%`.
+
+## Telemetry Review - 2026-06-27 Sloppy 10s Run
+
+Source: `telemetry/20260627-212410-miata-drag-10s-fh6-telemetry.jsonl`
+
+### Summary
+
+- Duration: `10.0 s`, `720` packets.
+- Drivetrain: RWD telemetry (`DrivetrainType: 1`).
+- Gear: `2` for the entire run.
+- Speed: `21.1 mph` average, `34.4 mph` maximum.
+- Throttle: `72.8%` average; `100%` throttle for `280` packets.
+- Brake and handbrake: unused throughout the capture.
+- Steering: full or near-full lock for `504` of `563` moving samples above
+  `10 mph`.
+- Rear combined slip: `22.1` average, `40.2` maximum.
+- Front combined slip: `2.46` average, `9.77` maximum.
+- Rear tire temperature: approximately `275-315 F` during the capture.
+
+### Diagnosis
+
+The gearing target is working: 2nd gear stayed in a compact-zone speed window
+and never exceeded approximately `34 mph`. The tire problem does not look like
+the whole car needs to be slicker. The rear is over-blooming and cooking while
+the front only saturates badly during high-angle/full-lock moments. That points
+to rear over-rotation and steering saturation more than pure front-end grip
+loss.
+
+### Next Small Test
+
+Keep `Offroad Race Tire Compound` if this run was already on the RWD front-end
+revision. Do not move to a looser compound yet.
+
+Change only these first:
+
+- Front pressure: `20.5 PSI`
+- Rear pressure: `36.0 PSI`
+- Rear differential acceleration: `82%`
+
+If the front still skates while the rear is controllable, then test the
+secondary front-contact patch adjustment:
+
+- Front camber: `-4.0 deg`
+- Front toe: `+0.6 deg`
