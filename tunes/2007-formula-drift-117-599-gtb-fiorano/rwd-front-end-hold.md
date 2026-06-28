@@ -9,20 +9,20 @@
 - Controls: Xbox controller, Standard steering, ABS off, traction control off,
   stability control off.
 - Shifting: manual, 2nd gear as compact-zone scoring gear.
-- Status: pending field test after full trigger throw was restored and RWD
-  drift practice improved throttle confidence.
+- Status: field-improved after pressure and rear differential adjustment. No
+  camber or toe changes applied.
 
 ## Tune
 
 ### 1. Tires
 
 - Compound: `Offroad Race Tire Compound`
-- Front: `22.0 PSI`
-- Rear: `40.0 PSI`
+- Front: `20.5 PSI`
+- Rear: `36.0 PSI`
 
 Offroad race gives the front loose-surface bite now that AWD is no longer
-pulling the nose through the slide. The high rear pressure keeps the rear
-willing to bloom.
+pulling the nose through the slide. The revised pressures reduced rear
+over-bloom while keeping the rear willing to rotate.
 
 ### 2. Gearing
 
@@ -82,15 +82,15 @@ rotation available without relying only on throttle violence.
 
 ### 9. Differential
 
-- Rear acceleration: `88%`
+- Rear acceleration: `82%`
 - Rear deceleration: `18%`
 
 ## Adjustment Cues
 
 - If the rear lights instantly and rotates past recoverable angle, lower rear
-  acceleration to `82%`.
+  acceleration to `78%`.
 - If it feels lazy or one-wheel-ish under throttle, raise rear acceleration to
-  `94-100%`.
+  `86-88%`.
 - If entry rotation pushes the nose wide, lower rear deceleration to `12-15%`.
 - If lift-off entries feel nervous, raise rear deceleration to `20-22%`.
 
@@ -137,3 +137,49 @@ secondary front-contact patch adjustment:
 
 - Front camber: `-4.0 deg`
 - Front toe: `+0.6 deg`
+
+## Telemetry Review - 2026-06-27 Fresh Pull
+
+Source: `telemetry/20260627-213253-miata-drag-10s-fh6-telemetry.jsonl`
+
+### Summary
+
+- Duration: `10.0 s`, `720` packets.
+- Drivetrain: RWD telemetry (`DrivetrainType: 1`).
+- Gear: `2` for the entire run.
+- Speed: `43.1 mph` average, `55.0 mph` maximum.
+- Throttle: `68.1%` average; `100%` throttle for `219` packets.
+- Brake and handbrake: unused throughout the capture.
+- Rear combined slip: `4.04` average, `7.83` maximum.
+- Front combined slip: `1.40` average, `4.66` maximum.
+- No moving samples exceeded `20` rear combined slip or `5` front combined
+  slip.
+- Rear tire temperature: approximately `178-278 F` during the capture.
+
+### Comparison To Sloppy Baseline
+
+- Rear slip average dropped from `22.1` to `4.04`.
+- Rear slip maximum dropped from `40.2` to `7.83`.
+- Front slip average dropped from `2.46` to `1.40`.
+- Absolute body-slip angle stayed under `39 deg`; the previous run reached
+  nearly `88 deg`.
+- Rear tire temperature was much cooler, dropping from roughly `275-315 F` to
+  `178-278 F`.
+
+### Diagnosis
+
+The pressure and rear differential change worked. The car is no longer
+over-blooming the rear tires or cooking them through the run. The higher speed
+range means the rear is now converting more throttle into drive, but the slide
+state is much more controlled. Leave camber and toe unchanged for the next
+test.
+
+### Next Small Test
+
+Hold this setup. If the car now feels too hooked and climbs speed too easily,
+test only one of these:
+
+- Rear pressure: `38.0 PSI`
+- Rear differential acceleration: `86%`
+
+Do not apply both at once.

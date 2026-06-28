@@ -43,13 +43,14 @@ Keep the throaty V12 character unless a later class target requires a swap.
 ### Behemoth RWD Front-End Hold Revision
 
 **Status:** Next field test after full trigger throw was restored and RWD drift
-practice improved throttle confidence.
+practice improved throttle confidence. Pressure and rear differential changes
+were field-improved on the fresh pull; camber and toe remain unchanged.
 
 #### 1. Tires
 
 - Compound: `Offroad Race Tire Compound`
-- Front: `22.0 PSI`
-- Rear: `40.0 PSI`
+- Front: `20.5 PSI`
+- Rear: `36.0 PSI`
 
 Offroad race is chosen over snow for the RWD revision because the front needs
 loose-surface bite now that AWD is no longer pulling the nose through the
@@ -113,7 +114,7 @@ rotation available without relying only on throttle violence.
 
 #### 9. Differential
 
-- Rear acceleration: `88%`
+- Rear acceleration: `82%`
 - Rear deceleration: `18%`
 
 If the rear lights instantly and rotates past recoverable angle, lower rear
