@@ -11,7 +11,7 @@ each vehicle section in FH6 menu order.
 
 | Vehicle / event | Recorded tune or result | Status |
 | --- | --- | --- |
-| 2007 Formula Drift #117 599 GTB Fiorano | Behemoth AWD dirt drift baseline; AWD rally and snow references | Hold for driver acclimation |
+| 2007 Formula Drift #117 599 GTB Fiorano | Separate tune entries in `tunes/2007-formula-drift-117-599-gtb-fiorano/` | RWD front-end revision pending field test |
 | Deep Forest Seasonal Speed Zone | BMW M1 shared-tune completion result | Complete |
 | 1985 Toyota Sprinter Trueno GT Apex | B 600 Deep Forest lightweight baseline; S1 AWD drift package | B 600 unsuccessful; S1 drift awaiting field test |
 | 1982 Porsche 911 Turbo 3.3 | B 600 Deep Forest baseline | Field tested; unsuccessful |
@@ -25,17 +25,110 @@ Purpose: FH6 off-road challenge-score drift baseline for Xbox controller,
 Standard steering, no ABS, traction control, or stability control. This is a
 drift build, so manual shifting is allowed and recommended.
 
-Build context: AWD conversion with snow tires for loose-surface drifting.
-Rally tires were too effective on dirt and made the car gain speed while
-holding the tires. Use adjustable antiroll bars, race/drift transmission,
-drift or rally springs and dampers, race brakes, and adjustable AWD
-differential. Keep the throaty V12 character unless a later class target
-requires a swap.
+Build context: the AWD snow version helped while learning the car, but full
+trigger throw and RWD practice made rear-drive more fun and usable. Current
+test direction is RWD with a front-end confidence tune: more front dirt bite,
+less nose wash, and a rear diff that is still lively without being binary.
+Keep the throaty V12 character unless a later class target requires a swap.
+
+### Tune Entry Files
+
+- [RWD front-end hold](tunes/2007-formula-drift-117-599-gtb-fiorano/rwd-front-end-hold.md)
+  is the current next field test.
+- [AWD snow 2nd-gear](tunes/2007-formula-drift-117-599-gtb-fiorano/awd-snow-2nd-gear.md)
+  is the field-improved learning baseline.
+- [AWD rally 4.10 reference](tunes/2007-formula-drift-117-599-gtb-fiorano/awd-rally-4-10-reference.md)
+  is the archived too-grippy reference.
+
+### Behemoth RWD Front-End Hold Revision
+
+**Status:** Next field test after full trigger throw was restored and RWD drift
+practice improved throttle confidence.
+
+#### 1. Tires
+
+- Compound: `Offroad Race Tire Compound`
+- Front: `22.0 PSI`
+- Rear: `40.0 PSI`
+
+Offroad race is chosen over snow for the RWD revision because the front needs
+loose-surface bite now that AWD is no longer pulling the nose through the
+slide. The high rear pressure keeps the rear willing to bloom.
+
+#### 2. Gearing
+
+- Final drive: `5.00`
+- 1st: `3.10`
+- 2nd: `2.60`
+- 3rd: `2.15`
+- 4th: `1.72`
+- 5th: `1.42`
+- 6th: `1.18`
+
+Keep second as the compact-zone scoring gear for this test. Do not revise
+gearing again until the new tire and front-end setup has been driven.
+
+#### 3. Alignment
+
+- Front camber: `-4.5 deg`
+- Rear camber: `-0.7 deg`
+- Front toe: `+0.8 deg` (toe-out)
+- Rear toe: `-0.2 deg` (toe-in)
+- Front caster: `7.0 deg`
+
+This backs away from maximum front camber and heavy toe-out to give the front
+tires a broader dirt contact patch while keeping fast steering response.
+
+#### 4. Antiroll Bars
+
+- Front: `5.5`
+- Rear: `10.5`
+
+#### 5. Springs
+
+- Front: `390.0 lb/in`
+- Rear: `440.0 lb/in`
+- Front ride height: `8.1 in`
+- Rear ride height: `8.5 in`
+
+Lowering and softening the nose helps it take a set; the higher rear keeps
+rotation available without relying only on throttle violence.
+
+#### 6. Damping
+
+- Front rebound: `4.8`
+- Rear rebound: `5.6`
+- Front bump: `2.3`
+- Rear bump: `2.8`
+
+#### 7. Aero
+
+- Front: `55 lb`
+- Rear: `20 lb`
+
+#### 8. Brake
+
+- Balance: `68% front`
+- Pressure: `90%`
+
+#### 9. Differential
+
+- Rear acceleration: `88%`
+- Rear deceleration: `18%`
+
+If the rear lights instantly and rotates past recoverable angle, lower rear
+acceleration to `82%`. If it feels lazy or one-wheel-ish under throttle, raise
+rear acceleration to `94-100%`. If entry rotation pushes the nose wide, lower
+rear deceleration to `12-15%`; if lift-off entries feel nervous, raise it to
+`20-22%`.
 
 ### Behemoth AWD Dirt Drift Baseline
 
 **Status:** Hold for driver acclimation. First snow/5.00-final test produced a
-marked improvement and advanced the drift challenge by one star.
+marked improvement and advanced the drift challenge by one star. Later review
+found the Xbox controller throttle stop was accidentally set to the middle
+`50%` trigger-throw setting; full trigger throw is now restored and greatly
+improved control.
 
 #### 1. Tires
 
@@ -125,6 +218,13 @@ on a compact dirt section. The next revision targets second gear as the
 scoring gear and uses a `5.00` final drive so the rear tires bloom before the
 car builds road speed.
 
+Field note: after soaking this tune, the Xbox controller's rear throttle-stop
+switch was found in the middle `50%` trigger-throw setting instead of the top
+full-throw setting. This physically limited how deeply the trigger could be
+depressed, reducing throttle modulation travel and contributing to earlier
+tire-bloom and drivability symptoms. Re-test future refinements only with full
+trigger throw enabled.
+
 If the car still straightens under throttle, lower front acceleration to
 `8-10%` or move center balance to `93% rear`. If the tail becomes too loose on
 dirt, raise front acceleration to `16-20%` before lowering center balance back
@@ -168,7 +268,8 @@ Measured from screenshots with the AWD build.
 - Captured at `S2 858` with snow tires and the `5.00` final-drive gearing.
 - Field result: first run was a marked improvement and advanced the challenge
   by one star. Hold this setup until the driver has more seat time with the
-  car and tune.
+  car and tune. Later controller review found prior runs were affected by a
+  `50%` trigger-throw setting; full trigger throw is now restored.
 - Braking distance: `110.2 ft` from 60-0 mph and `278.9 ft` from 100-0 mph.
 - Lateral Gs: `1.05` at 60 mph and `1.08` at 120 mph.
 - Acceleration and speed: `2.301 s` 0-60, `3.897 s` 0-100, and `134.5 mph`

@@ -15,5 +15,11 @@ Forza Horizon 6 project instructions
 - The user's default play context is Xbox controller, Standard steering,
   automatic transmission, ABS off, traction control off, and stability control
   off.
+- Before diagnosing throttle, gearing, launch, drift wheelspin, or power
+  delivery problems, confirm the Xbox controller's rear trigger-stop switches
+  are set to full trigger throw. The controller has three-way switches: top is
+  full throw, middle is 50% throw, and bottom is click. This physically limits
+  how deeply the trigger can be depressed, changing throttle modulation travel
+  rather than indicating a tune issue.
 - Manual shifting is available for drift builds only.
 - The user prefers throatier, meaner sounding cars.
