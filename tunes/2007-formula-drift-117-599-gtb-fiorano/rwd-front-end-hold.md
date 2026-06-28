@@ -9,8 +9,8 @@
 - Controls: Xbox controller, Standard steering, ABS off, traction control off,
   stability control off.
 - Shifting: manual, 2nd gear as compact-zone scoring gear.
-- Status: field-improved after pressure and rear differential adjustment. No
-  camber or toe changes applied.
+- Status: current field baseline. Pressure, rear differential, and front
+  contact-patch changes have all improved behavior during live drift practice.
 
 ## Tune
 
@@ -39,14 +39,15 @@ again until the new tire and front-end setup has been driven.
 
 ### 3. Alignment
 
-- Front camber: `-4.5 deg`
+- Front camber: `-4.0 deg`
 - Rear camber: `-0.7 deg`
-- Front toe: `+0.8 deg` toe-out
+- Front toe: `+0.6 deg` toe-out
 - Rear toe: `-0.2 deg` toe-in
 - Front caster: `7.0 deg`
 
 Backs away from maximum front camber and heavy toe-out to give the front tires
-a broader dirt contact patch while keeping fast steering response.
+a broader dirt contact patch while keeping enough steering response for fast
+direction changes.
 
 ### 4. Antiroll Bars
 
@@ -91,6 +92,9 @@ rotation available without relying only on throttle violence.
   acceleration to `78%`.
 - If it feels lazy or one-wheel-ish under throttle, raise rear acceleration to
   `86-88%`.
+- If a direction change still makes the front skate while the rear is
+  recoverable, test front toe at `+0.5 deg`. Leave camber, pressure, and
+  differential unchanged for that test.
 - If entry rotation pushes the nose wide, lower rear deceleration to `12-15%`.
 - If lift-off entries feel nervous, raise rear deceleration to `20-22%`.
 
@@ -270,6 +274,73 @@ Hold the tune. Do not change camber, toe, pressure, or differential from this
 pull. The next useful data is another clean mid-smoke sample or a recovery
 sample that intentionally captures the moment after a direction change starts
 to overcook.
+
+## Telemetry Review - 2026-06-27 Chaos Recovery Pull
+
+Source: `telemetry/20260627-220105-miata-drag-10s-fh6-telemetry.jsonl`
+
+### Driver Context
+
+The run started with a lot of runway speed in 6th, then shifted down hard into
+2nd and threw the car into a recovery drill. The capture includes both a
+successful high-angle recovery and a later overcook.
+
+### Summary
+
+- Duration: `10.0 s`, `721` packets.
+- Drivetrain: RWD telemetry (`DrivetrainType: 1`).
+- Raw telemetry gear: starts in `6`, passes through `5`, `4`, `3`, and the
+  known transient `11`, then sits in `2` from about `1.27 s` onward.
+- Speed: `64.7 mph` average, `133.7 mph` maximum, `21.9 mph` minimum.
+- Throttle: `41.2%` average; brake and handbrake unused throughout the
+  capture.
+- Body-slip beta: `-67.7 deg` minimum, `31.2 deg` maximum.
+- Combined tire slip averages: front `1.89`, rear `6.28`.
+- Combined tire slip peaks: front `8.0` near `6.11 s`, rear `14.3` near
+  `6.73 s`.
+- No bottoming or airborne proxy samples appeared in the capture.
+
+### Recovery Shape
+
+- Entry and shift, `0.0-1.25 s`: speed stayed `120-134 mph`; throttle was
+  mostly lifted and the car had not yet built much angle.
+- First recovery, `1.25-5.75 s`: speed fell from about `120 mph` to `36 mph`;
+  beta reached `-67.7 deg`; throttle was near zero for `77.5%` of the phase;
+  front slip averaged `2.05` with a `4.00` peak while rear slip averaged
+  `6.79` with a `10.67` peak.
+- Reversal and overcook, `5.75-7.75 s`: speed was only `22-36 mph`; throttle
+  was full for `63.9%` of the phase; front slip peaked first at `8.0`, then
+  rear slip peaked at `14.3` once full throttle and full opposite lock were
+  applied.
+- Final recovery and end, `7.75-10.0 s`: speed rebuilt to about `41 mph`; beta
+  moved from `-34.5 deg` back through center and ended near `30 deg`.
+
+### Diagnosis
+
+The tune is strong enough to catch a very ugly high-speed send without brake
+or handbrake help. The first recovery does not look like a rear differential
+problem: the rear is smoking, but the front stays readable and the car bleeds
+speed cleanly.
+
+The first weak point appears during the low-speed direction change. The front
+slip spike happens before the rear peak, which means the nose briefly asks for
+more time/contact patch before the tail fully blooms. The later rear slip
+spike is mostly full-throttle commitment at low speed, not a reason to calm
+the rear yet.
+
+### Field Result
+
+The front contact-patch test was promoted after live Horizon Stadium practice.
+The car behaved better while the driver explored the edge with throttle
+feathering and cleaner lines, reaching about half way around the stadium while
+leaving a continuous visible drift trail.
+
+### Next Small Test
+
+Hold this baseline. If the front still hesitates during direction changes,
+try only front toe at `+0.5 deg`. If the rear starts becoming too calm or
+straightening early, return front toe to `+0.6 deg` before changing the rear
+differential.
 
 ## Telemetry Note - Gear Field Mapping
 

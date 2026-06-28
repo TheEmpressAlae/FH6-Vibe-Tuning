@@ -11,7 +11,7 @@ each vehicle section in FH6 menu order.
 
 | Vehicle / event | Recorded tune or result | Status |
 | --- | --- | --- |
-| 2007 Formula Drift #117 599 GTB Fiorano | Separate tune entries in `tunes/2007-formula-drift-117-599-gtb-fiorano/` | RWD front-end revision pending field test |
+| 2007 Formula Drift #117 599 GTB Fiorano | Separate tune entries in `tunes/2007-formula-drift-117-599-gtb-fiorano/` | RWD front-end hold field baseline |
 | Deep Forest Seasonal Speed Zone | BMW M1 shared-tune completion result | Complete |
 | 1985 Toyota Sprinter Trueno GT Apex | B 600 Deep Forest lightweight baseline; S1 AWD drift package | B 600 unsuccessful; S1 drift awaiting field test |
 | 1982 Porsche 911 Turbo 3.3 | B 600 Deep Forest baseline | Field tested; unsuccessful |
@@ -34,7 +34,7 @@ Keep the throaty V12 character unless a later class target requires a swap.
 ### Tune Entry Files
 
 - [RWD front-end hold](tunes/2007-formula-drift-117-599-gtb-fiorano/rwd-front-end-hold.md)
-  is the current next field test.
+  is the current field baseline.
 - [AWD snow 2nd-gear](tunes/2007-formula-drift-117-599-gtb-fiorano/awd-snow-2nd-gear.md)
   is the field-improved learning baseline.
 - [AWD rally 4.10 reference](tunes/2007-formula-drift-117-599-gtb-fiorano/awd-rally-4-10-reference.md)
@@ -42,9 +42,10 @@ Keep the throaty V12 character unless a later class target requires a swap.
 
 ### Behemoth RWD Front-End Hold Revision
 
-**Status:** Next field test after full trigger throw was restored and RWD drift
-practice improved throttle confidence. Pressure and rear differential changes
-were field-improved on the fresh pull; camber and toe remain unchanged.
+**Status:** Current field baseline after full trigger throw was restored and
+RWD drift practice improved throttle confidence. Pressure, rear differential,
+and front contact-patch changes have all improved behavior during live drift
+practice.
 
 #### 1. Tires
 
@@ -71,14 +72,15 @@ gearing again until the new tire and front-end setup has been driven.
 
 #### 3. Alignment
 
-- Front camber: `-4.5 deg`
+- Front camber: `-4.0 deg`
 - Rear camber: `-0.7 deg`
-- Front toe: `+0.8 deg` (toe-out)
+- Front toe: `+0.6 deg` (toe-out)
 - Rear toe: `-0.2 deg` (toe-in)
 - Front caster: `7.0 deg`
 
 This backs away from maximum front camber and heavy toe-out to give the front
-tires a broader dirt contact patch while keeping fast steering response.
+tires a broader dirt contact patch while keeping enough steering response for
+fast direction changes.
 
 #### 4. Antiroll Bars
 
