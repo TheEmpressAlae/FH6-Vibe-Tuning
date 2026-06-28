@@ -222,3 +222,20 @@ maintain rhythm. That is the desired compromise for learning this RWD setup.
 
 No tune change from this pull. Keep gathering mid-smoke and recovery samples
 before changing pressure, differential, camber, or toe again.
+
+## Telemetry Note - Gear Field Mapping
+
+In the U-turn/recovery capture from
+`telemetry/20260627-214740-miata-drag-10s-fh6-telemetry.jsonl`, the car was
+visibly in 3rd gear on the runway while the raw telemetry reported `Gear = 2`.
+For this car and capture set, read the Data Out `Gear` field as a raw
+telemetry value, not the literal in-game gear label. Practical interpretation:
+
+- Data Out `Gear = 2` matched the in-game runway 3rd gear state.
+- Data Out `Gear = 3` should be treated as the next gear up from that state,
+  not literal displayed 3rd.
+- Data Out `Gear = 11` appeared briefly during the gear transition and should
+  be treated as a transient/sentinel value until proven otherwise.
+
+Do not tune around a capture solely because it reports `Gear = 3`; first verify
+the in-game gear or driver context.

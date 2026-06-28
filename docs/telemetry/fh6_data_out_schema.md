@@ -17,6 +17,11 @@ Important points from the official article:
 - FH6 does not include the Forza Motorsport `TireWear` or `TrackOrdinal` fields.
 - FH6 uses `S32 WheelInPuddle*` boolean fields. Older Forza Motorsport docs use
   `F32 WheelInPuddleDepth*`; do not apply that older schema to FH6 captures.
+- Validate the raw `Gear` field against the in-game display before drawing
+  conclusions. In the 2007 Formula Drift #117 599 GTB Fiorano drift captures,
+  the car was visibly in 3rd gear on the runway while Data Out reported
+  `Gear = 2`, so forward gears appear zero-indexed for this use case. Treat
+  `Gear = 11` as a transient/sentinel shift value until proven otherwise.
 
 The documented fields add to `323` bytes. The local parser treats the last byte
 as `_PacketPadding` so the decoded structure matches the official `324` byte
