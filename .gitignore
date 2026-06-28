@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+
+# Runtime telemetry captures can get large quickly.
+/telemetry/
+/tmp/
+
+# Local source/reference clone. Keep the upstream repo intact but do not
+# accidentally vendor its nested .git history into this project.
+tools/FH6-UDP-Telemetry-Router/
+tools/FH6-Telemetry-Router-release/
+tools/FH6_Telemetry_Router_v*.zip
+
+# Local controller bridge install/source snapshot.
+tools/XOutput-3.32/
+tools/XOutput-source-3.32/

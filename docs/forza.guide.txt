@@ -1,0 +1,788 @@
+FORZA HORIZON 6
+TUNING GUIDE
+
+Beginner-friendly Forza Horizon 6 tuning guide and cheat sheet — quick reference for building faster, better-handling cars.
+
+If you're new to tuning, start with Fundamentals below.
+If your car has a specific problem like understeer or oversteer, jump to Balance & Fix-It.
+If you want to tune from scatch, you can start with Tuning Workflow below.
+
+Questions and feedback? Leave a comment in this Reddit post.
+
+FUNDAMENTALS
+
+Grip Comes from the Tire Contact Patch
+
+Each tire only touches the road over a small area — the contact patch. Everything your car does (turning, accelerating, braking) is the contact patch transmitting force to the road. More patch, evenly loaded, gives more grip.
+
+Almost every setting in the tuning menu is, indirectly, about getting the best possible contact patch in the situation you care about. Tire pressure controls the patch's shape. Camber controls how flat it sits when you turn. Springs and dampers control whether the patch stays touching the road when the surface is uneven or when weight shifts. ARBs control how much weight transfers side-to-side. Once you internalise that, the rest is just bookkeeping.
+
+The two ways a car can lose grip
+
+Understeer — the front tires lose grip first. The car wants to go straight even though you're turning the wheel. It "pushes" wide off the corner. Mnemonic: "under" = car turns less than you wanted.
+
+Oversteer — the rear tires lose grip first. The back end swings out and the car wants to spin. Mnemonic: "over" = car turns more than you wanted.
+
+Both happen because one end of the car has relatively less grip than the other. That's the whole game: balance front grip against rear grip. Almost every setting nudges this balance one way or the other.
+
+The Four Corner Phases
+
+A corner isn't one event — it's four. Different settings dominate each phase, so when you have a problem, diagnose where in the corner it happens first.
+
+The Golden Rules
+
+BALANCE & FIX-IT
+
+Understeer Cards (car pushes wide, won't turn)
+
+U1
+ENTRY UNDERSTEER
+
+The car refuses to turn in when you brake into the corner. Front tires feel dead.
+
+Front ARB
+soften
+
+Front spring rate
+soften
+
+Front rebound damping
+soften
+
+Brake bias
+shift rearward
+
+Rear diff decel
+reduce
+
+Caster
+increase
+
+U2
+MID-CORNER UNDERSTEER
+
+Steady-state pushing — you're cornering at constant throttle and the front just won't bite.
+
+Front ARB
+soften
+
+Front tire pressure
+lower
+
+Front camber
+add negative
+
+Front downforce
+increase
+
+Front ride height
+lower
+
+U3
+EXIT UNDERSTEER (ON THROTTLE)
+
+Front washes out when you apply power on corner exit — common on AWD and FWD.
+
+Front diff accel
+reduce
+
+Rear spring rate
+stiffen
+
+Rear downforce
+reduce
+
+Rear bump damping
+stiffen
+
+Rear toe-in
+reduce
+
+U4
+HIGH-SPEED UNDERSTEER
+
+Plows through fast sweepers but slow corners feel okay. Front lacks aero grip at speed.
+
+Front downforce
+increase
+
+Front camber
+add negative
+
+Front ride height
+lower
+
+Rear downforce
+reduce
+
+Oversteer Cards (rear breaks loose, snap or slide)
+
+O1
+ENTRY OVERSTEER (LIFT / TRAIL-BRAKE)
+
+Rear steps out when you brake or lift off entering a corner.
+
+Rear diff decel
+increase
+
+Rear ARB
+soften
+
+Brake bias
+shift forward
+
+Rear spring rate
+soften
+
+Front rebound
+stiffen
+
+O2
+MID-CORNER OVERSTEER
+
+Rear keeps sliding through a steady corner at constant throttle.
+
+Rear ARB
+soften
+
+Rear camber
+add negative
+
+Rear downforce
+increase
+
+Rear ride height
+lower
+
+O3
+POWER OVERSTEER (SNAP ON THROTTLE)
+
+Rear breaks free when you get on the gas. Common on high-power RWD.
+
+Rear diff accel
+reduce
+
+Rear spring rate
+soften
+
+Rear bump damping
+soften
+
+Rear downforce
+increase
+
+Rear toe-in
+increase
+
+O4
+SNAP OVERSTEER (VIOLENT, SUDDEN)
+
+Rear comes around without warning. Almost always a too-stiff rear.
+
+Rear ARB
+soften
+
+Rear spring rate
+soften
+
+Rear rebound
+soften
+
+Rear bump
+soften
+
+Rear diff accel
+reduce
+
+Other Problems
+
+B1
+NOSE DIVES UNDER BRAKING
+
+Front compresses dramatically when you brake, upsetting the chassis before turn-in.
+
+Front bump damping
+stiffen
+
+Front spring rate
+stiffen
+
+Front rebound
+stiffen
+
+B2
+BOUNCY / FLOATY
+
+Car oscillates over bumps — suspension can't settle. Dampers too soft.
+
+Bump (both axles)
+stiffen
+
+Rebound (both axles)
+stiffen
+
+Springs
+stiffen
+
+B3
+SKITTERS OVER BUMPS / CURBS
+
+Loses grip suddenly on rough surfaces — suspension too stiff, tires leave the ground.
+
+Bump damping
+soften
+
+Springs
+soften
+
+ARBs
+soften
+
+Ride height
+raise
+
+B4
+BOTTOMS OUT / SCRAPES
+
+Suspension hits its travel limit. Causes sudden grip loss when it does.
+
+Ride height
+raise
+
+Springs
+stiffen
+
+Bump
+stiffen
+
+B5
+WHEEL SPIN ON EXIT
+
+Rear tires spin instead of putting power down. High-power RWD classic.
+
+Rear diff accel
+reduce
+
+Rear spring rate
+soften
+
+Rear bump
+soften
+
+Rear downforce
+increase
+
+B6
+LAZY IN CHICANES
+
+Car feels sluggish changing direction quickly — too soft to transition.
+
+ARBs (both)
+stiffen
+
+Rebound (both)
+stiffen
+
+Springs
+stiffen
+
+Parameter → Balance Direction Cheat Table
+
+PARAMETER	INCREASING →	DECREASING →	AFFECTS MOST
+Front tire pressure	Understeer	More front grip	Mid-corner
+Rear tire pressure	Oversteer	More rear grip	Mid + Exit
+Front camber (more negative)	More front grip (less understeer)	Understeer	Mid-corner
+Rear camber (more negative)	More rear grip (less oversteer)	Oversteer	Mid + Exit
+Caster	Stability + dynamic camber (more front grip mid-turn), snappy turn-in if too high	Lazier turn-in, less self-centering	Entry + Mid
+Front toe-out	Sharper turn-in	Lazier turn-in	Entry
+Rear toe-in	Rear stability (less oversteer)	More oversteer	Exit
+Front ARB	Understeer	Oversteer	Mid-corner
+Rear ARB	Oversteer	Understeer	Mid-corner
+Front springs	Understeer	Oversteer	Entry + Mid
+Rear springs	Oversteer	Understeer	Mid + Exit
+Front ride height	Understeer (higher CG)	More front grip	Mid-corner
+Rear ride height	Oversteer	More rear grip	Mid-corner
+Front rebound	Understeer on entry	Oversteer on entry	Entry
+Rear rebound	Oversteer on entry	Understeer on entry	Entry
+Front bump	Entry understeer, less dive, rear wheel-spin on power	Diving under braking, lazy direction changes	Entry
+Rear bump	Power oversteer, rear hops on exit	Better exit traction, loose rear over bumps	Exit
+Front downforce	More front grip at speed	High-speed understeer	High-speed
+Rear downforce	More rear grip at speed	High-speed oversteer	High-speed
+Brake bias forward	Stable braking, entry understeer	Trail-brake oversteer risk	Braking + Entry
+Diff accel	Oversteer on power (more locked)	Less drive out of corners	Exit
+Diff decel	Understeer on lift (more locked)	Oversteer on lift	Entry
+
+TUNING WORKFLOW
+
+Tune in this order. Each step assumes the previous ones are done — for example, you can't sensibly tune dampers before springs because dampers need to match the spring rates.
+
+Know your car. You need to know its drivetrain (does it drive the front wheels, rear wheels, or all four?), total weight, weight distribution (what percentage of weight sits on the front axle?), power output, the era it was built in, and what kind of suspension and tires are installed. These all change the right answers later — most steps below scale with these numbers.
+
+Finish the whole baseline before balancing. Each step builds on the last, so there's nothing to test until the car is fully assembled. A quick shakedown lap is fine; real balance testing starts once the baseline is done.
+
+Test & balance. Test where you'll actually race — a tune dialed in on an open highway will feel awful on a twisty circuit, and vice versa. Pick a track from the weekly challenges (or wherever you intend to compete) and run it as a Rivals event for consistent conditions. Then drive several laps, find the worst handling problem, use Balance & Fix-It to address it. One change at a time.
+
+Track-specific tweaks (optional). Once your car is working well, you can shift the whole tune slightly toward "more cornering grip" for technical tracks (softer everything, max aero, shorter gears) or "more straight-line speed" for fast tracks (stiffer, less aero, longer gears). Most players don't need this until they're chasing the last tenths of a lap time.
+
+TIRES
+
+Tire pressure controls the shape of the contact patch. Too high and the patch becomes small and round (less grip, more skating). Too low and the tire deforms badly under load (the sidewall flexes, you lose stability, and the patch isn't actually flat anymore).
+
+Higher pressures make the car more responsive (sharper, quicker to react). Lower pressures are more forgiving (softer, slower to react, more grip when grip is the limiting factor).
+
+Very low pressures (20 psi) increase mechanical grip but make the car feel unresponsive and cost straight-line speed. Very high pressures (40 psi+) give better launch and top speed but cost cornering grip.
+
+Tire compound simply sets the maximum grip ceiling. Race slicks > sport > street > stock. Off-road compounds trade asphalt grip for dirt/sand grip.
+
+Base Pressures by Compound
+
+COMPOUND	PRESSURE (PSI)
+Slick	28 – 32.5
+Semi-Slick	27 – 29.5
+Stock / Street / Rally	24 – 26.5
+Off-Road	15.5 – 21
+
+Why slicks want more air: grippier tires have stiffer sidewalls, so they need more pressure than street or rally tires to keep the patch shape under cornering loads.
+
+Heavier cars want more pressure: Very heavy cars may need to exceed the upper end of the range.
+
+Picking the Right Compound
+
+Tight technical tracks generate more friction — they reward upgraded compounds. Tracks with long high-speed straights keep tires cool, so cheaper compounds are fine and you can spend your performance budget elsewhere.
+
+Rough guide by Performance Index class:
+
+D and C class: stock tires almost always.
+
+B class: stock tires most of the time. Street tires can work for very tight technical circuits.
+
+A class: usually street tires at minimum. Heavier and older A-class cars want semi-slicks; lighter modern cars can manage on street.
+
+S1 / S2: typically semi-slicks or race slicks. Rally tires sit between sport and semi-slick in PI cost but offer cornering grip closer to slicks — worth experimenting with on light, powerful cars.
+
+Heavier and older cars want stickier tires to keep up on tighter tracks — older cars to compensate for their inferior factory suspension.
+
+GEARING
+
+Starting Point
+
+Adjust the final drive only; leave individual gear ratios at default. Open the final drive slider and watch the speed graph in the corner of the screen — move it so the curve just reaches the edge of the graph. That gives you a sensible top speed to start from.
+
+Then confirm on track: the car should just barely reach the rev limiter in top gear at the end of the longest straight. Bouncing off the limiter early → lengthen the gears (lower the final drive) for more top speed. Weak acceleration out of corners → shorten them (raise the final drive).
+
+Manually Tuning Individual Gears (if needed)
+
+If your build needs a fully custom transmission (which is rare on modern circuit-focused builds), here's the practical sequence:
+
+Dial in 1st gear for launch. Find a flat stretch or use a Rivals event. Adjust either 1st gear or the final drive until launching produces a small amount of controllable wheel-spin. Too long and the car bogs before the powerband; too short and it just spins helplessly. This is especially important on AWD cars.
+
+Set your target top speed using top gear. Find the highest speed you actually hit during a lap, then set top gear to extend 10-20 mph beyond that. This gives you headroom for slipstreaming without banging off the rev limiter.
+
+Space the middle gears as a logarithmic curve. When you look at the gear ratio sliders on the screen, you want a curve that's more spread out at the bottom (1st-to-2nd is the biggest jump) and tighter at the top (last two gears can look nearly identical on the graph). The reason: air resistance grows exponentially with speed, so each higher gear naturally produces less acceleration even when ratios are similar.
+
+ALIGNMENT
+
+Camber
+
+Toe
+
+Deviation cases (only after other tuning failed):
+
+FWD car still hesitates at turn-in → add +0.1° front toe-out
+
+RWD car still snaps loose on throttle → add −0.1 to −0.2° rear toe-in
+
+Older road cars on stock parts may benefit from up to −0.3° rear toe-in
+
+Front Caster
+
+Off-road exception: off-road buggies and race trucks often run lower caster (2.0°) — the terrain demands more suspension travel and less steering self-centering. For everything else, stay in the 6.5–7.0° range.
+
+ANTI-ROLL BARS (ARBS)
+
+Starting Point
+
+Max out both ARBs, then soften until the car lands in its balance window and feels right. Maxed front and rear is a strong, well-tested baseline — especially on AWD race builds — because stiff bars sharpen the car, preserve your alignment under load, and improve braking stability. Instead of guessing numbers from scratch, you start high and soften toward a known target.
+
+Use the mechanical balance readout on the tuning screen to judge how far to soften. It shows front-vs-rear mechanical grip — higher = more front grip relative to rear. Aim for 0.55–0.65, sweet spot ~0.60:
+
+Below ~0.55 → likely understeering, won't corner as fast as it could
+
+Above ~0.65 → likely unstable, rear loses grip too easily
+
+Set front and rear ARBs at (or near) max.
+
+Soften the end with the problem — front for understeer, rear for a loose or unstable rear — until mechanical balance sits in the 0.55–0.65 window and the car feels right to drive.
+
+Compensate side effects with springs (e.g., if you softened the front a lot for turn-in, raise the front spring slightly to keep stability).
+
+SPRINGS
+
+Springs
+
+Put both spring sliders around ⅓ to ½ of the way up their range — the sweet spot for almost any car.
+
+Set the heavier end a little higher than the lighter end (a roughly 50/50 car keeps them close to even).
+
+(RWD, optional) nudge the rear up a touch to aid rotation — only after testing, since overdoing it causes turn-in problems.
+
+Ride Height
+
+Starting Point
+
+DAMPING
+
+Starting Point
+
+How to Set Dampers
+
+Heavier cars and stiffer springs need stiffer dampers. A car with 60% of its weight on the front needs stiffer front dampers than rear ones.
+
+Start at the minimum bump value for your car type (table below), scale up slightly based on front weight, then derive rebound from the bump-is-~40%-of-rebound rule. Rear values follow the front, nudged slightly toward whichever end has the stiffer springs.
+
+Min Front Bump by Car Type
+
+CAR TYPE	MIN BUMP
+Street / Sports / Race	4.4–5.0
+Utility / Race Truck	5.0–5.2
+Rally / Off-road (all types)	1.0
+
+Rear Dampers
+
+Stiffer rear springs → add a bit to rear bump and rear rebound, so the rear damper numbers end up slightly above the front damper numbers.
+
+Stiffer front springs → subtract a bit from rear bump and rear rebound, so the rear damper numbers end up slightly below the front damper numbers.
+
+(The springs decide the direction; the bump and rebound values are what you actually move.)
+
+Damper Behavior Reference
+
+If you're confused about whether to soften or stiffen, this table tells you what each problem points at:
+
+SETTING	TOO SOFT	TOO STIFF
+Front Bump	Corner-diving under braking; bouncy front; lazy direction changes	Understeer on entry; rear wheel-spin on power
+Front Rebound	Oversteer on entry; lazy direction changes	Understeer on entry; understeer while turning
+Rear Bump	Loose rear over bumps	Power oversteer; rear hops on corner exit
+Rear Rebound	Rear floats / settles slowly	Rear won't settle into mid-corner; harsh transitions
+
+AERO
+
+Starting Point
+
+You almost always want both front and rear aero adjustable, or neither — running one without the other creates serious imbalance at speed.
+
+Some body kits already include a front splitter (you may not be able to add another). You still usually pick a rear wing from the kit; which rear wing you choose is cosmetic — different looks, same downforce and tuning range.
+
+Most fast road builds run maximum front downforce, then set rear for stability. Rear too low → oversteer at speed; rear too high → understeer and drag. Some speed-focused guides run minimum rear and only add rear if the tail slides — that trades corner stability for straight-line speed; use it cautiously on high-speed tracks.
+
+DRIVETRAIN	STARTING BIAS
+RWD	Slight rear emphasis (less front, more rear)
+FWD / AWD	Slight front emphasis (more front, less rear)
+
+Workflow
+
+Step 1 — front downforce. Start at maximum front unless the car feels too slow on straights — then lower front slightly.
+
+Step 2 — rear downforce. Drive the car and set rear for stability at speed. Sprint and speed-focused builds run much lower on both ends. More downforce = more grip but more drag.
+
+Step 3 — fine-tune by feel. Add to one end if needed (more front → less understeer; more rear → less oversteer). Add only when possible — don't pull down one end just to fix the other.
+
+Power & Weight Adjustments
+
+BRAKE
+
+Starting Point
+
+If you finish braking before turn-in (controller, beginner, high-speed circuits) → 52–56% forward bias. Stable and predictable.
+
+If you trail-brake into corners (experienced, tighter tracks) → 53% rear bias for front-engine cars, 54% rear bias for mid/rear-engine. More rotation, harder to drive.
+
+Two Philosophies of Brake Bias
+
+The two starting points above come from different tuning approaches, not different car types:
+
+Philosophy A — Stability-first (forward bias). Front tires do most of the stopping. Predictable, hard to spin under braking. Best when you finish braking before turn-in.
+
+Philosophy B — Rotation-first (slight rear bias). Rear tires share more of the work. More overall braking force before the fronts lock; rotates more easily under trail-braking. Easier to make the rear step out — requires more skill.
+
+Starting Values by Car Type
+
+CAR TYPE	BIAS (% FORWARD)	PRESSURE %
+Utility	50%	120%
+Street / Sports	52%	125%
+Race / Race Truck	56%	145%
+Rally	48%	125%
+Off-road Buggy	46%	110%
+Off-road Car / Sports	48%	115%
+Off-road Truck / Race Truck	52%	135%
+
+Diagnostic — Adjusting Brakes by Symptom
+
+While trail-braking (continuing to brake into the corner):
+
+Car pushes wide (understeer) → shift bias 1–2% rearward
+
+Rear slides out → shift bias 1–2% forward
+
+Straight-line braking:
+
+Front wheels lock first (you miss your turn-in) → shift bias slightly rearward
+
+Rear wheels lock first (rear gets squirrely) → shift bias slightly forward
+
+Brake pressure:
+
+Sweet spot: tire lockup happens in the last 10–15% of trigger pull. Gives you full control range.
+
+Lock up too easily with light input → reduce pressure 5–10%
+
+Need to mash the trigger for stopping power → increase pressure 5–10%
+
+If unsure, leave pressure at the default — it's the bias that usually needs tuning, not the pressure.
+
+DIFFERENTIAL
+
+RWD
+
+Start: 55% accel / 15% decel
+
+Accel range: 50–70% — higher = more exit speed but demands throttle control
+
+Decel range: 10–20% — higher = more stable entry, less rotation on lift
+
+Aggressive exit-speed builds can run up to ~90% accel, but requires good throttle discipline
+
+FWD
+
+Start: 85% accel / 0% decel
+
+Accel range: 80–95% — above ~95% restricts turn-in
+
+Decel range: 0–10% — don't go below ~5%, it causes instability
+
+FWD diffs tolerate very high accel and very low decel better than other drivetrains
+
+AWD
+
+Start:
+
+Front: 85% accel / 0% decel
+
+Rear: 55% accel / 15% rear decel
+
+Center: 70–80% rear bias
+
+Front diff — treat like FWD: 80–95% accel, 0–10% decel
+
+Rear diff — treat like RWD: 50–70% accel, 10–15% decel; Aggressive exit-speed builds can run up to ~90% accel, but requires good throttle discipline
+
+Center split — 70–80% rear bias, never below 50%. Road racing → higher rear bias; off-road → lower. Longer wheelbase wants more rear bias; shorter cars sit around 70–80%.
+
+Off-road / rally AWD (oversteer-biased): dirt builds intentionally run looser to drift through corners.
+
+Front: 80–95% accel / 0–10% decel
+
+Rear: ~90% accel / 10–15% decel
+
+Center: 50–70% rear bias
+
+~70% center for oversteer-happy feel; ~50% for neutral, planted. Never below 50%.
+
+MENTAL MODEL
+
+Older car = stiffer chassis tune, more conservative alignment & diff
+
+Race car = softer chassis tune, more locked diff
+
+Heavier car = stiffer springs and ARBs, more brake pressure
+
+More power = lower final drive, downforce considerations at the 400 hp and 800 hp thresholds
+
+Open-wheel = lower rear camber, more open diff (combats inherent understeer)
+
+Grippier tires = stiffer setup; lower-grade tires = softer
+
+Dirt = soft + understeer bias; Cross Country = stiffer + oversteer bias
+
+Grip track = soft + oversteer bias + short gears + max aero
+
+Speed track = stiff + understeer bias + long gears + min aero
+
+Cold or wet = softer setup, more understeer bias, lower brake/diff lock
+
+DRAG TUNING
+
+Build & Upgrades (before you tune)
+
+Drag tuning starts in the upgrade shop, not the tuning menu. The build is most of the work.
+
+Engine swap. Most stock motors aren't viable for serious drag. Pick a swap with high power potential that matches your target class. For fastest times overall, AWD swaps are generally quicker off the line.
+
+Drivetrain. AWD = easier, faster launches. RWD = more skill required but lighter and authentic to many builds. Pick based on whether you want pace or character.
+
+Power. Max out engine upgrades to the limit of your target class.
+
+Suspension. Rally suspension is usually a solid starting point for drag — despite the name, it works well in most cases, though not always. Try it first and swap if it doesn't suit the build.
+
+Sway bars. Install both front and rear.
+
+Weight. Reduce weight as aggressively as the class allows. Skip bracing — it adds weight for handling benefits you don't need on a straight line. Race brakes are worth fitting here: they're lighter than stock, and on a straight line you don't need the stopping power, so the weight saving is the real win. A lighter bonnet/hood also shaves a few kg — swap it where one's available.
+
+Drivetrain parts. Best clutch, best driveshaft. For transmission, the 4-speed drift box is easier to tune since it has fewer gears, but any race transmission lets you shift without clutching in.
+
+Differential: any two-way adjustable diff — the base options behave nearly identically in-game.
+
+Aero. Removing rear wings gives a tiny advantage. If you're not chasing the absolute best time, keep what looks right.
+
+Wheels. Check the weight before installing. Wheel weight matters more than most people realize — go for the lightest set you can find, kept at a small diameter.
+
+Tires. Drag compound, widest rear, skinniest front.
+
+Base Drag Tune
+
+These are starting values — gear ratios get refined on the strip afterward.
+
+SETTING	FRONT	REAR
+Tire pressure	Max	Min
+Camber	Slight negative	Slight positive
+Toe	0.0°	0.0°
+Caster	Max	Max
+Anti-roll bars	Stiff	Stiff
+Springs	Soft	Soft
+Ride height	Max	Max
+Damping — bump	Stiff	Soft
+Damping — rebound	Soft	Stiff
+Aero	Minimum (or removed)	Minimum (or removed)
+Brakes	Don't matter — leave default	
+Differential — acceleration	~85%	
+Differential — deceleration	Doesn't matter
+
+Initial Gear Ratios
+
+Before the first run, just get the graph filled out:
+
+Drag top gear all the way to the right of the gear-ratio graph.
+
+Bring every lower gear up to meet it so the curve looks evenly distributed.
+
+That's your starting point. The strip does the rest of the tuning.
+
+Fine-Tuning on the Strip
+
+Iterative process. Change one thing, run the strip, compare time.
+
+Tune 1st gear for the launch.
+
+If the car bogs off the line → shorten 1st gear (smaller increments — adjustments of ~5 ticks are often already too much).
+If the car spins helplessly → lengthen 1st gear back.
+Goal: leaves hard with controllable wheelspin, builds into the powerband immediately.
+
+Tune 1st gear for the launch.
+
+If the car bogs off the line → shorten 1st gear (smaller increments — adjustments of ~5 ticks are often already too much).
+
+If the car spins helplessly → lengthen 1st gear back.
+
+Goal: leaves hard with controllable wheelspin, builds into the powerband immediately.
+
+Tune 2nd and 3rd for the rest of the quarter.
+
+Watch your RPMs as you cross the finish line.
+If you're not at the top of 3rd as you cross → shorten 2nd and 3rd until you are.
+Why stop at 3rd? Leaving 4th alone keeps the car usable on longer straights and roll races without retuning.
+
+Tune 2nd and 3rd for the rest of the quarter.
+
+Watch your RPMs as you cross the finish line.
+
+If you're not at the top of 3rd as you cross → shorten 2nd and 3rd until you are.
+
+Why stop at 3rd? Leaving 4th alone keeps the car usable on longer straights and roll races without retuning.
+
+DRIFT TUNING
+
+Picking a Car
+
+The drivetrain and engine layout matter more than the model. Make it easy on yourself first, get fancy later.
+
+Layout. Front-engine, rear-wheel drive is the most predictable and the easiest to learn on. Mid-engine and AWD can absolutely drift, but they're harder to control when starting out.
+
+Engine character. Pick a swap (or stock motor) where horsepower and torque are roughly similar. A peaky engine with far more hp than torque, or one with a huge spike, feels snatchy and unpredictable. Smooth, flat delivery = a car that's easy to hold sideways.
+
+Power level. Entirely your call. A chill cruiser can sit around 700-800 hp; serious builds run more. Less power is easier to learn on. Match your tire width to the power (more below).
+
+Build & Upgrades (before you tune)
+
+Like drag, a lot of the work is in the upgrade shop. Build backwards — start from the engine, since it dictates everything else.
+
+Engine / aspiration. Swap or keep stock to hit your target power with a smooth curve. Big single turbos make the most power but add turbo lag — that flat-then-spike delivery makes the car less stable. Twin-turbo, supercharger, or natural aspiration are more predictable. If you do run turbos, anti-lag smooths out the spike (and shoots flames).
+
+Drivetrain swap. Rear-wheel drive.
+
+Body kit & aero. Pure aesthetics — they don't affect drifting. Run whatever looks good, wing or no wing.
+
+Tires (compound). See the trade-off below.
+
+Tire width. Scales with power. Mid-power (~700 hp) sits comfortably around 245–285 front, 265–295 rear. More power → wider rears for grip; very low power → thinner for easier wheelspin. A square setup (same front/rear) is fine too.
+
+Wheels. Lighter is marginally better; size and style are aesthetic. Pick what looks right.
+
+Transmission. A race 6-speed is the easy recommendation. The dedicated 4-speed drift box is fewer gears to tune but isn't essential — skip it unless you're try-harding.
+
+Driveline. Max clutch and driveshaft.
+
+Differential. Install the drift differential.
+
+Platform & handling. Max brakes. Drift springs & dampers (slams the car and dials in camber automatically). Install front and rear anti-roll bars. Roll cage can subtly change grip in odd ways — most people leave it near stock. Run full weight reduction for agility.
+
+Engine upgrades. Max to your target power. Watch the camshaft — maxing it spikes hp without much torque, which hurts that smooth delivery. Watch turbos for the same reason.
+
+Base Drift Tune
+
+Starting values. Gears get refined on the road afterward (see below). This is a RWD setup.
+
+SETTING	FRONT	REAR
+Tire pressure	Leave stock-ish	Lower (toward min) for less rear grip
+Camber	Full negative (−5°)	Slight negative (−1°)
+Toe	+1.0° (out)	−0.1 to −0.2° (slightly in)
+Caster	Max	—
+Anti-roll bars	Soft, but not fully soft (~8)	Soft, but not fully soft (~8)
+Springs	Mid (e.g. ~400 lb/in), match front/rear	Same as front for consistency
+Damping — bump	Soft (~4)	Soft (~4)
+Damping — rebound	Soft (~4)	Soft (~4)
+Aero	Optional — toward cornering for more front grip	Doesn't matter
+Brake balance	Toward front (~70%)	—
+Differential — acceleration	—	100% (locked)
+Differential — deceleration	—	~10% (low)
+
+Why these settings
+
+Rear tire pressure low — shrinks rear grip so the back rotates more easily. Rear tires heat up and gain pressure as they spin, so starting low lands in a usable range.
+
+Front camber maxed, rear pulled in — heavy front camber keeps the front biting through big steering angles; less rear camber keeps a usable rear contact patch.
+
+Toe out front — makes the car turn in sharper and feel livelier. More toe-out + more negative camber = snappier, less forgiving.
+
+Brake balance forward — lets you brake mid-drift without snapping the rear loose, which is essential for tandems and corner adjustments.
+
+Differential locked on accel — both rear wheels spin together, the single biggest factor in a predictable, consistent slide. The drift diff often sets this automatically.
+
+Final Drive on the Road
+
+Gearing is the one thing you can't tune without driving. Do it last.
+
+Find a long straight. Come to a dead stop in your main drifting gear (often 3rd or 4th).
+
+Floor it and watch the RPMs as the wheels spin up.
+
+Goal: revs should climb to near redline but not bounce off the limiter in that gear.
+
+Too short (bouncing off the limiter)? Move final drive slightly toward top speed.
+
+Too tall (revs fall well short of redline)? Move final drive toward acceleration.
+
+Tune the final drive only — adjusting it scales every gear, so the gears either side of your main one come out drift-ready automatically.
+
+DATA IS COMPILED FROM IN-GAME AND PUBLICLY AVAILABLE RESOURCES.
+
+© 2026 FORZA GUIDE.

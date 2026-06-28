@@ -1,0 +1,4 @@
+interface:
+  display_name: "Local Agent Offload"
+  short_description: "Push broad analysis into local parallel work"
+  default_prompt: "Use $local-agent-offload to turn this investigation into parallel local sweeps and focused subagent tasks."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "FH6 10s Telemetry Listen"
+  short_description: "Run short FH6 telemetry capture windows"
+  default_prompt: "Use $fh6-telemetry-10s-listen to run a 10-second FH6 telemetry listener and summarize health."
