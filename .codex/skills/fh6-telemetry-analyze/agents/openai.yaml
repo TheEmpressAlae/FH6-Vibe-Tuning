@@ -1,0 +1,4 @@
+interface:
+  display_name: "FH6 Telemetry Analyze"
+  short_description: "Compare FH6 telemetry pulls locally"
+  default_prompt: "Use $fh6-telemetry-analyze to compare FH6 telemetry captures and explain the tune behavior."

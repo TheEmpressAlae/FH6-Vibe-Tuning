@@ -12,18 +12,20 @@ Forza Horizon 6 project instructions
   and maximums before giving numeric ride-height values. If the rest of the
   tune can be useful immediately, provide it with ride height marked `Pending
   min/max` rather than inventing values.
-- The user's default play context is Xbox controller, Standard steering,
-  automatic transmission, ABS off, traction control off, and stability control
-  off.
-- Before diagnosing throttle, gearing, launch, drift wheelspin, or power
-  delivery problems, confirm the Xbox controller's rear trigger-stop switches
-  are set to full trigger throw. The controller has three-way switches: top is
-  full throw, middle is 50% throw, and bottom is click. This physically limits
-  how deeply the trigger can be depressed, changing throttle modulation travel
-  rather than indicating a tune issue.
+- The user's default play context is Xbox controller, simulation steering,
+  automatic transmission for race, manual for drift, ABS off, traction control
+  off, and stability control off.
 - When a Git commit is requested during tuning or telemetry work, prefer
   spawning a separate Codex thread/agent to perform the scoped stage/commit so
   the main thread can continue analysis in parallel. The commit agent must be
   told the exact files or paths it owns and must not stage unrelated work.
-- Manual shifting is available for drift builds only.
 - The user prefers throatier, meaner sounding cars.
+- Only ask the user about the throttle switches if something seems errant in
+  the telemetry pulls the user provides for each car.
+- When making tuning adjustments, only return the changed tabs in the correct
+  menu order. There is no need to mention unchanged tabs if there is no reason
+  to drill into them.
+- For telemetry/log review, do not process raw JSONL or long logs in the main
+  chat. Use bounded local parser commands and, when multi-agent tools are
+  available, spawn a read-only telemetry review agent to reduce pulls into
+  compact evidence. The main agent owns final tuning synthesis only.
