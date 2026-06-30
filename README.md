@@ -13,8 +13,7 @@ experiment without feeling like they need a lab coat.
 
 ## What is here
 
-- `AGENTS.md` and `AGENT.md`: the project rules Codex should follow in this
-  workspace.
+- `AGENTS.md`: the project rules Codex should follow in this workspace.
 - `TUNING.md`: the main tuning reference, menu-order conventions, measured
   baselines, and current vehicle notes.
 - `tunes/`: per-car tune entries that are easier to share or revise than the

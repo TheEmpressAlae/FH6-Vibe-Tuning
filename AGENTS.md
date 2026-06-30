@@ -29,3 +29,21 @@ Forza Horizon 6 project instructions
   chat. Use bounded local parser commands and, when multi-agent tools are
   available, spawn a read-only telemetry review agent to reduce pulls into
   compact evidence. The main agent owns final tuning synthesis only.
+- When the user says a "fresh pull", "fresh drag", or similar fresh telemetry
+  pass is ready, infer that the capture has already been completed by the
+  user's button/script workflow and is pending review. First quick-scan the
+  telemetry folder, parse `telemetry/latest-good-fh6-capture.txt` or the newest
+  matching JSONL/listen/summary artifacts, then run the project review/analyzer
+  script. Do not start a new listener unless the user explicitly asks for one
+  or no completed capture exists.
+- For the first pass on a fresh telemetry review, trust
+  `telemetry/latest-good-fh6-capture.txt` only when `Status=complete` and
+  active packets are present. If that metadata includes
+  `AnalysisStatus=complete` and an existing `AnalysisJson`, inspect that JSON
+  first so Codex can move directly into review. If the analysis artifact is
+  missing, stale, or points at a zero-active capture, run the local analyzer
+  before interpreting the pull.
+- Telemetry cannot reveal installed tuning sliders directly, but it can still
+  justify drivetrain direction changes such as FWD, RWD, and AWD when repeated
+  pulls show a clear entry, sustain, or recovery pattern. Do not rediscover
+  this distinction each time.

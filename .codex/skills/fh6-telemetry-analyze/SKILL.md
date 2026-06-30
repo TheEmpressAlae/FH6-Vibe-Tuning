@@ -13,6 +13,11 @@ fingerprint behavior: speed, gear, throttle, brake, steering, body slip,
 combined slip, slip ratio, tire temperature, suspension travel, bottoming,
 airborne proxy, and launch timing.
 
+Telemetry can still justify drivetrain direction decisions such as `FWD`,
+`RWD`, and `AWD` when repeated pulls show a clear entry, sustain, recovery, or
+launch pattern. Keep drivetrain conclusions separate from claims about the
+current installed slider state.
+
 ## Workflow
 
 1. Work from `C:\Users\EmpressAlae\Documents\ffh6`.
@@ -83,6 +88,9 @@ fresh capture.
   asking too much angle/speed from the front contact patch.
 - More body slip with controlled rear slip can be healthy drift angle; more
   body slip with rear runaway flags over-rotation.
+- A repeated "resists release, then runs away" or "kicks early, then settles
+  into front push" pattern can justify trying or rejecting a drivetrain
+  direction such as `FWD`, `RWD`, or `AWD`.
 - Bottoming or airborne proxy means suspension/ride-height changes are more
   relevant than differential changes.
 - Brake and handbrake rates matter because driver input can explain behavior
@@ -94,5 +102,8 @@ fresh capture.
 
 Keep the user-facing answer short. Do not paste raw JSON unless explicitly
 asked. Say what changed relative to baseline, what it implies, and the next
-single useful test or tune adjustment. If full slider values are needed, ask
-for tuning-menu screenshots or manual values in FH6 menu order.
+single useful test or tune adjustment. If telemetry supports a drivetrain
+direction change, say that explicitly. If the current installed slider state is
+unknown, say so explicitly and avoid phrasing any specific diff, alignment, or
+spring value as already confirmed. If full slider values are needed, ask for
+tuning-menu screenshots or manual values in FH6 menu order.

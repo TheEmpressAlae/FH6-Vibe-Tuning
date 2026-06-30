@@ -76,6 +76,7 @@ function Get-Fh6AutoLabel {
     }
 
     $knownCars = @{
+        1459 = "1957-chevrolet-bel-air"
         1045 = "1987-pontiac-firebird-trans-am-gta"
         3249 = "2007-formula-drift-117-599-gtb-fiorano"
         3852 = "1991-honda-beat"
@@ -160,6 +161,19 @@ function Format-LatestPath {
     return $Path.Replace("\", "/")
 }
 
+function Get-Fh6ActivePacketCount {
+    param([string] $CapturePath)
+
+    if (-not (Test-Path -LiteralPath $CapturePath)) {
+        return 0
+    }
+
+    return (Select-String `
+            -LiteralPath $CapturePath `
+            -Pattern '"IsRaceOn"\s*:\s*1(?=[,}])' |
+        Measure-Object).Count
+}
+
 $labelWasAuto = (-not $PSBoundParameters.ContainsKey("Label")) -or ($Label -eq "") -or ($Label -eq "auto")
 $safeLabel = if ($labelWasAuto) { "capture" } else { ConvertTo-SafeLabel $Label }
 $startedAt = (Get-Date).ToString("o")
@@ -213,9 +227,10 @@ try {
     else {
         0
     }
+    $activePacketCount = Get-Fh6ActivePacketCount -CapturePath $jsonl
 
     if ($packetCount -le 0) {
-        "CapturePath=$(Format-LatestPath $jsonl)`nLabel=$safeLabel`nLabelMode=$(if ($labelWasAuto) { "auto" } else { "explicit" })`nStatus=error`nError=NoPackets`nPacketCount=0`nStarted=$startedAt`nFinished=$((Get-Date).ToString("o"))`nListenLog=$(Format-LatestPath $listenLog)" |
+        "CapturePath=$(Format-LatestPath $jsonl)`nLabel=$safeLabel`nLabelMode=$(if ($labelWasAuto) { "auto" } else { "explicit" })`nStatus=error`nError=NoPackets`nPacketCount=0`nActivePacketCount=0`nStarted=$startedAt`nFinished=$((Get-Date).ToString("o"))`nListenLog=$(Format-LatestPath $listenLog)" |
             Set-Content -LiteralPath $latest
         throw "No telemetry packets were captured on UDP $Port."
     }
@@ -247,19 +262,24 @@ try {
             Tee-Object -FilePath $summaryLog
         $summaryExit = $LASTEXITCODE
         if ($summaryExit -ne 0) {
-            "CapturePath=$(Format-LatestPath $jsonl)`nLabel=$safeLabel`nLabelMode=$(if ($labelWasAuto) { "auto" } else { "explicit" })`nStatus=error`nError=SummaryFailed`nSummaryExitCode=$summaryExit`nPacketCount=$packetCount`nStarted=$startedAt`nFinished=$((Get-Date).ToString("o"))`nListenLog=$(Format-LatestPath $listenLog)`nSummaryLog=$(Format-LatestPath $summaryLog)" |
+            "CapturePath=$(Format-LatestPath $jsonl)`nLabel=$safeLabel`nLabelMode=$(if ($labelWasAuto) { "auto" } else { "explicit" })`nStatus=error`nError=SummaryFailed`nSummaryExitCode=$summaryExit`nPacketCount=$packetCount`nActivePacketCount=$activePacketCount`nStarted=$startedAt`nFinished=$((Get-Date).ToString("o"))`nListenLog=$(Format-LatestPath $listenLog)`nSummaryLog=$(Format-LatestPath $summaryLog)" |
                 Set-Content -LiteralPath $latest
             throw "Telemetry summary exited with code $summaryExit."
         }
     }
 
-    "CapturePath=$(Format-LatestPath $jsonl)`nLabel=$safeLabel`nLabelMode=$(if ($labelWasAuto) { "auto" } else { "explicit" })`nStatus=complete`nPacketCount=$packetCount`nStarted=$startedAt`nFinished=$((Get-Date).ToString("o"))`nListenLog=$(Format-LatestPath $listenLog)" |
+    "CapturePath=$(Format-LatestPath $jsonl)`nLabel=$safeLabel`nLabelMode=$(if ($labelWasAuto) { "auto" } else { "explicit" })`nStatus=complete`nPacketCount=$packetCount`nActivePacketCount=$activePacketCount`nStarted=$startedAt`nFinished=$((Get-Date).ToString("o"))`nListenLog=$(Format-LatestPath $listenLog)" |
         Set-Content -LiteralPath $latest
     if (-not $NoSummary) {
         Add-Content -LiteralPath $latest -Value "SummaryLog=$(Format-LatestPath $summaryLog)"
     }
-    $latestGoodContent = Get-Content -LiteralPath $latest -Raw
-    Set-Content -LiteralPath $latestGood -Value $latestGoodContent
+    if ($activePacketCount -gt 0) {
+        $latestGoodContent = Get-Content -LiteralPath $latest -Raw
+        Set-Content -LiteralPath $latestGood -Value $latestGoodContent
+    }
+    else {
+        Add-Content -LiteralPath $latest -Value "LatestGoodUpdate=skipped_no_active_packets"
+    }
 }
 finally {
     Pop-Location

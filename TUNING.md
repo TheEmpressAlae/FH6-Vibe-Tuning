@@ -11,6 +11,8 @@ each vehicle section in FH6 menu order.
 
 | Vehicle / event | Recorded tune or result | Status |
 | --- | --- | --- |
+| 1957 Chevrolet Bel Air | [Railgun kilo-drag completion](tunes/1957-chevrolet-bel-air/railgun-kilo-drag.md) | Complete: kilo drag and great air leap planted |
+| 1962 Lincoln Continental | [Drift-drag couch opener](tunes/1962-lincoln-continental/drift-drag-couch-opener.md); [AWD telemetry review](tunes/1962-lincoln-continental/awd-telemetry-review.md) | RWD opener archived; AWD test sequence documented, still front-limited |
 | 2007 Formula Drift #117 599 GTB Fiorano | Separate tune entries in `tunes/2007-formula-drift-117-599-gtb-fiorano/` | RWD front-end hold field baseline |
 | 1987 Pontiac Firebird Trans Am GTA | [Drift-drag baseline](tunes/1987-pontiac-firebird-trans-am-gta/drift-drag-baseline.md) | v1.3 dry baseline; pending rain-free telemetry |
 | Deep Forest Seasonal Speed Zone | BMW M1 shared-tune completion result | Complete |
@@ -19,6 +21,44 @@ each vehicle section in FH6 menu order.
 | 1982 DeLorean DMC-12 | S1 street baseline; planned A-class revision | S1 baseline recorded; A-class pending |
 | 1984 Peugeot 205 Turbo 16 | Stable skill-chain baseline and powered-landing guide | Field-validated live baseline |
 | 1977 Ford #5 Escort RS1800 MkII | S1 skill-chain baseline and tabletop nose-heavy revision | v1 applied; v2 next test |
+
+## 1957 Chevrolet Bel Air
+
+Purpose: FH6 drag railgun build for the map kilo-drag challenge and the great
+air leap landing afterward. This is not a drift tune; the target is straight
+line violence with enough chassis control to land cleanly.
+
+### Tune Entry Files
+
+- [Railgun kilo-drag completion](tunes/1957-chevrolet-bel-air/railgun-kilo-drag.md)
+  records the completed challenge result.
+
+### Railgun Kilo-Drag Completion
+
+**Status:** Complete. The Bel Air cleared the kilo-drag challenge and made the
+great air leap afterward, landing approximately `1100 ft` downrange and
+planting cleanly.
+
+Build context: max engine direction, drag tires, 7-speed transmission, maximum
+practical weight removal, and the user's normal race context of Xbox
+controller, simulation steering, automatic transmission, ABS off, traction
+control off, and stability control off.
+
+Telemetry anchor:
+
+- `telemetry/20260630-094126-car-1459-s1-787-awd-10s-fh6-telemetry.jsonl`:
+  active `S1 787` AWD pull for ordinal `1459` (`1957 Chevrolet Bel Air`).
+  The pull reached `60 mph` in `2.016 s`, `100 mph` in `3.500 s`, and
+  `181.84 mph` in the 10-second window. It used full throttle throughout,
+  showed no brake use, no bottoming, and no airborne proxy during the capture.
+  Rear slip was dominant while front slip stayed controlled, confirming the
+  railgun direction was working instead of wasting the launch through the
+  front axle.
+
+Validation result: challenge complete after the map kilo drag; the great air
+leap landed planted rather than bouncing or skating. No further tuning is
+needed unless the goal changes from validated challenge completion to chasing a
+faster leaderboard-style pass.
 
 ## 1987 Pontiac Firebird Trans Am GTA
 
