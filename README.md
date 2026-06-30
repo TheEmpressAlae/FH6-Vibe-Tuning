@@ -3,6 +3,9 @@
 Codex-first tuning notes, telemetry helpers, and project instructions for a
 Forza Horizon 6 tuning workflow.
 
+Got Codex, a strange desire to turn a 1962 Lincoln Continental into a drift
+couch, and a wish to learn without torching your context window? Come on in.
+
 This repo is a public snapshot of the working loop: ask Codex to reason from
 local tuning conventions, capture short telemetry pulls, record what changed,
 and keep the results readable enough that another player can try the same
