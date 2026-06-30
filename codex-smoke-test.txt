@@ -1,0 +1,3 @@
+Hello from Codex.
+
+This file is a small smoke test for GitHub connector write access.
