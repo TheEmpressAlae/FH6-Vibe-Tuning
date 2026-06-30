@@ -76,7 +76,7 @@ function Get-Fh6AutoLabel {
     }
 
     $knownCars = @{
-        1459 = "1957-chevrolet-bel-air"
+        1459 = "fh6-chevrolet-bel-air-1957"
         1045 = "1987-pontiac-firebird-trans-am-gta"
         3249 = "2007-formula-drift-117-599-gtb-fiorano"
         3852 = "1991-honda-beat"

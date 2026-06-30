@@ -9,9 +9,13 @@
 Canonical tune notes currently live in this file. Detailed values remain under
 each vehicle section in FH6 menu order.
 
+New shareable tune notes should use `fh6-<make>-<model>-<year>-<tune-style>.md`
+under `tunes/`, lowercased and hyphenated. Example:
+`tunes/fh6-chevrolet-bel-air-1957-drag.md`.
+
 | Vehicle / event | Recorded tune or result | Status |
 | --- | --- | --- |
-| 1957 Chevrolet Bel Air | [Railgun kilo-drag completion](tunes/1957-chevrolet-bel-air/railgun-kilo-drag.md) | Complete: kilo drag and great air leap planted |
+| 1957 Chevrolet Bel Air | [Drag tune completion](tunes/fh6-chevrolet-bel-air-1957-drag.md) | Complete: kilo drag and great air leap planted |
 | 1962 Lincoln Continental | [Drift-drag couch opener](tunes/1962-lincoln-continental/drift-drag-couch-opener.md); [AWD telemetry review](tunes/1962-lincoln-continental/awd-telemetry-review.md) | RWD opener archived; AWD test sequence documented, still front-limited |
 | 2007 Formula Drift #117 599 GTB Fiorano | Separate tune entries in `tunes/2007-formula-drift-117-599-gtb-fiorano/` | RWD front-end hold field baseline |
 | 1987 Pontiac Firebird Trans Am GTA | [Drift-drag baseline](tunes/1987-pontiac-firebird-trans-am-gta/drift-drag-baseline.md) | v1.3 dry baseline; pending rain-free telemetry |
@@ -24,16 +28,16 @@ each vehicle section in FH6 menu order.
 
 ## 1957 Chevrolet Bel Air
 
-Purpose: FH6 drag railgun build for the map kilo-drag challenge and the great
+Purpose: FH6 drag build for the map kilo-drag challenge and the great
 air leap landing afterward. This is not a drift tune; the target is straight
 line violence with enough chassis control to land cleanly.
 
 ### Tune Entry Files
 
-- [Railgun kilo-drag completion](tunes/1957-chevrolet-bel-air/railgun-kilo-drag.md)
+- [Drag tune completion](tunes/fh6-chevrolet-bel-air-1957-drag.md)
   records the completed challenge result.
 
-### Railgun Kilo-Drag Completion
+### Drag Tune Completion
 
 **Status:** Complete. The Bel Air cleared the kilo-drag challenge and made the
 great air leap afterward, landing approximately `1100 ft` downrange and
@@ -52,7 +56,7 @@ Telemetry anchor:
   `181.84 mph` in the 10-second window. It used full throttle throughout,
   showed no brake use, no bottoming, and no airborne proxy during the capture.
   Rear slip was dominant while front slip stayed controlled, confirming the
-  railgun direction was working instead of wasting the launch through the
+  drag direction was working instead of wasting the launch through the
   front axle.
 
 Validation result: challenge complete after the map kilo drag; the great air

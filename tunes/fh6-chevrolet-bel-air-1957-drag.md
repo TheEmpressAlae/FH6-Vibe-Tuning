@@ -1,4 +1,4 @@
-# 1957 Chevrolet Bel Air - Railgun Kilo-Drag Completion
+# FH6 Chevrolet Bel Air 1957 - Drag Tune
 
 ## Context
 
@@ -8,7 +8,7 @@
 - Drivetrain: AWD
 - Build: max engine direction, drag tires, 7-speed transmission, and maximum
   practical weight removal.
-- Purpose: drag railgun for the map kilo-drag challenge and the great air leap
+- Purpose: drag tune for the map kilo-drag challenge and the great air leap
   landing afterward. This is not a drift tune.
 - Controls: Xbox controller, simulation steering, automatic transmission, ABS
   off, traction control off, stability control off.
@@ -37,5 +37,5 @@ launch, high-speed pull, and landing stability all passed.
 ## Hold
 
 Do not retune this for drift behavior. If the challenge goal returns, preserve
-the validated railgun direction unless a matched follow-up pull shows a clear
+the validated drag direction unless a matched follow-up pull shows a clear
 launch, shift, or landing regression.

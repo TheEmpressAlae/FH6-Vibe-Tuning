@@ -25,6 +25,9 @@ Forza Horizon 6 project instructions
 - When making tuning adjustments, only return the changed tabs in the correct
   menu order. There is no need to mention unchanged tabs if there is no reason
   to drill into them.
+- New shareable tune notes should use this file name convention:
+  `fh6-<make>-<model>-<year>-<tune-style>.md`, lowercased and hyphenated.
+  Example: `tunes/fh6-chevrolet-bel-air-1957-drag.md`.
 - For telemetry/log review, do not process raw JSONL or long logs in the main
   chat. Use bounded local parser commands and, when multi-agent tools are
   available, spawn a read-only telemetry review agent to reduce pulls into

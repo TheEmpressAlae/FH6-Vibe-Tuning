@@ -40,7 +40,8 @@ files as source material and cook that adapter on their own.
 2. Ask Codex to read `AGENTS.md` and `TUNING.md` before giving tune values.
 3. Keep tune values in FH6 menu order: Tires, Gearing, Alignment, Antiroll
    Bars, Springs, Damping, Aero, Brake, Differential.
-4. Put reusable tune entries under `tunes/<vehicle-slug>/`.
+4. Put reusable tune entries under `tunes/` using
+   `fh6-<make>-<model>-<year>-<tune-style>.md`.
 5. Keep raw telemetry under `telemetry/`; it is ignored by git on purpose.
 
 The default driving context in this project is Xbox controller, simulation
