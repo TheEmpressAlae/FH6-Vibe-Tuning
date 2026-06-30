@@ -12,12 +12,131 @@ each vehicle section in FH6 menu order.
 | Vehicle / event | Recorded tune or result | Status |
 | --- | --- | --- |
 | 2007 Formula Drift #117 599 GTB Fiorano | Separate tune entries in `tunes/2007-formula-drift-117-599-gtb-fiorano/` | RWD front-end hold field baseline |
+| 1987 Pontiac Firebird Trans Am GTA | [Drift-drag baseline](tunes/1987-pontiac-firebird-trans-am-gta/drift-drag-baseline.md) | v1.3 dry baseline; pending rain-free telemetry |
 | Deep Forest Seasonal Speed Zone | BMW M1 shared-tune completion result | Complete |
 | 1985 Toyota Sprinter Trueno GT Apex | B 600 Deep Forest lightweight baseline; S1 AWD drift package | B 600 unsuccessful; S1 drift awaiting field test |
 | 1982 Porsche 911 Turbo 3.3 | B 600 Deep Forest baseline | Field tested; unsuccessful |
 | 1982 DeLorean DMC-12 | S1 street baseline; planned A-class revision | S1 baseline recorded; A-class pending |
 | 1984 Peugeot 205 Turbo 16 | Stable skill-chain baseline and powered-landing guide | Field-validated live baseline |
 | 1977 Ford #5 Escort RS1800 MkII | S1 skill-chain baseline and tabletop nose-heavy revision | v1 applied; v2 next test |
+
+## 1987 Pontiac Firebird Trans Am GTA
+
+Purpose: FH6 RWD drag-tire drift-drag experiment for Xbox controller,
+Standard steering, ABS off, traction control off, and stability control off.
+Manual shifting is available because this is a drift build, but the current
+telemetry captures stayed in second gear. Rear trigger stops were confirmed at
+full throw before throttle, launch, and drift-wheelspin diagnosis.
+
+Build context: drag tires give useful forward bite, then fall away sharply once
+the rear breaks loose. The tune aims to keep that tire-cliff character while
+delaying rear rotation enough for the driver to catch it cleanly.
+
+### Tune Entry Files
+
+- [Drift-drag baseline](tunes/1987-pontiac-firebird-trans-am-gta/drift-drag-baseline.md)
+  is the current dry baseline.
+
+### Drift-Drag Baseline
+
+**Status:** v1.3 dry baseline. v1.1 was quick but showed the rear too early;
+v1.2 tamed it but felt slightly sluggish. v1.3 keeps the added entry stability
+and restores one click of throttle rotation. Rain began before a clean v1.3
+telemetry pull, so do not tune from wet-road behavior yet.
+
+#### 1. Tires
+
+- Compound: `Drag Tire Compound`
+- Front: `30.0 PSI`
+- Rear: `16.0 PSI`
+
+#### 2. Gearing
+
+- Final drive: `4.60`
+- 1st: `2.07`
+- 2nd: `1.56`
+- 3rd: `1.19`
+- 4th: `0.98`
+- 5th: `0.88`
+- 6th: `0.80`
+
+Second gear is the current drift-drag gear. v1.1 and v1.2 telemetry both stayed
+in second for the full capture windows.
+
+#### 3. Alignment
+
+- Front camber: `-2.2 deg`
+- Rear camber: `-0.7 deg`
+- Front toe: `+0.2 deg` toe-out
+- Rear toe: `-0.1 deg` toe-in
+- Front caster: `7.0 deg`
+
+#### 4. Antiroll Bars
+
+- Front: `52.0`
+- Rear: `45.0`
+
+#### 5. Springs
+
+- Front: `600.0 lb/in`
+- Rear: `500.0 lb/in`
+- Front ride height: `4.0 in`
+- Rear ride height: `4.1 in`
+
+#### 6. Damping
+
+- Front rebound: `10.8`
+- Rear rebound: `8.8`
+- Front bump: `6.4`
+- Rear bump: `5.2`
+
+#### 7. Aero
+
+- Front: `145 lb`
+- Rear: `247 lb`
+
+#### 8. Brake
+
+- Balance: `70% front`
+- Pressure: `100%`
+
+#### 9. Differential
+
+- Rear acceleration: `83%`
+- Rear deceleration: `10%`
+
+If the rear still shows too quickly on dry pavement, lower rear acceleration
+back to `82%`. If it feels too lazy after matcha and a clean road, restore rear
+acceleration to `84%` before changing gearing, springs, or tire pressure.
+
+### Measured Slider Ranges
+
+| Setting | Front minimum | Front maximum | Rear minimum | Rear maximum |
+| --- | ---: | ---: | ---: | ---: |
+| Springs | 323.4 | 1,617.2 | 323.4 | 1,617.2 lb/in |
+| Ride height | 3.4 | 4.8 | 3.4 | 4.8 in |
+
+### Telemetry Notes
+
+- `telemetry/20260628-104452-1987-pontiac-firebird-trans-am-gta-s1-780-rwd-10s-fh6-telemetry.jsonl`:
+  v1.1 launch pull into a traffic-avoidance drift. The car matched the
+  Firebird signature: ordinal `1045`, RWD, `S1 780`. It reached `60 mph` in
+  about `2.48 s`, held second gear, and showed no brake, handbrake, bottoming,
+  or airborne samples.
+- `telemetry/20260628-105607-1987-pontiac-firebird-trans-am-gta-s1-780-rwd-10s-fh6-telemetry.jsonl`:
+  clean v1.1 held-line pull. Average speed rose to `49.9 mph`, max speed to `77.5 mph`,
+  and rear slip ratio averaged `4.80`, confirming the rear was too eager for a
+  forgiving baseline.
+- `telemetry/20260628-110127-1987-pontiac-firebird-trans-am-gta-s1-780-rwd-10s-fh6-telemetry.jsonl`:
+  v1.2 mid-line drift pull. Average speed was `79.5 mph`, max speed `92.3 mph`, rear
+  slip ratio averaged `0.97`, and power-oversteer samples dropped sharply,
+  matching the field note that it felt better but slightly sluggish.
+
+These Firebird captures were repaired after the old Stream Deck default wrote
+`miata-drag`; filenames and JSONL `_label` rows now match the packet identity.
+
+Next dry test: repeat a simple mid-line second-gear drift pull with v1.3. Do
+not revise from rain behavior unless the goal changes to wet drifting.
 
 ## 2007 Formula Drift #117 599 GTB Fiorano
 

@@ -1,9 +1,17 @@
 __pycache__/
 *.py[cod]
 
+# Local Codex run artifacts.
+/.agents/
+
 # Runtime telemetry captures can get large quickly.
 /telemetry/
 /tmp/
+
+# Generated local lookup data from game assets. Keep the public repo focused on
+# Codex workflows, tune notes, and reusable tooling rather than raw asset scans.
+/carlist/
+/.codex/skills/fh6-carlist-lookup/
 
 # Local source/reference clone. Keep the upstream repo intact but do not
 # accidentally vendor its nested .git history into this project.

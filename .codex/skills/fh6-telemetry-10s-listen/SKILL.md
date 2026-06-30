@@ -19,23 +19,31 @@ Use the existing project listener for a narrow, known-good 10-second capture win
 
 ## Capture
 
-Tell the user the 10-second window is starting, then run this from the repo root. Pick a short label such as `drag-pass`, `cornering`, `beat-baseline`, or `crash-isolation`.
+Tell the user the 10-second window is starting, then run the wrapper from the repo root. With no `-Label`, the wrapper records to a neutral temporary `capture` slug, renames the finished files from the first telemetry packet's car identity, and updates JSONL `_label` rows to match the detected identity.
 
 ```powershell
-$stamp = Get-Date -Format 'yyyyMMdd-HHmmss'
-$label = 'drag-pass'
-$out = "telemetry\$stamp-$label-10s-fh6-telemetry.jsonl"
-.\tools\fh6_telemetry.ps1 listen --port 5311 --duration 10 --jsonl $out --label "$label-10s" --summary-every 1
+.\tools\capture_fh6_telemetry_10s.ps1
+```
+
+Use an explicit label only when the user gives a car/tune/test context that should override auto-labeling:
+
+```powershell
+.\tools\capture_fh6_telemetry_10s.ps1 -Label firebird-v1.3-mid-line
 ```
 
 If the user is lining up for a pull, start the listener only when they say they are ready; the window is intentionally short.
 
 ## Immediate Check
 
-After the listener exits, summarize the capture and confirm FH6/router health.
+After the wrapper exits, parse `telemetry\latest-fh6-capture.txt` as key/value metadata. Do not treat the file contents as a raw path. If `Status` is not `complete`, report the error and do not summarize `CapturePath`. The wrapper also updates `telemetry\latest-good-fh6-capture.txt` only after successful captures.
 
 ```powershell
-.\tools\fh6_telemetry.ps1 summary $out
+$latest = ConvertFrom-StringData (Get-Content telemetry\latest-fh6-capture.txt -Raw)
+if ($latest.Status -ne 'complete') {
+    $latest
+    throw "FH6 telemetry capture did not complete: $($latest.Error)"
+}
+.\tools\fh6_telemetry.ps1 summary $latest.CapturePath
 Get-Process -Name forzahorizon6,FH6_UDPort_Forwarder -ErrorAction SilentlyContinue |
     Select-Object ProcessName,Id,CPU,WorkingSet64,StartTime,Path |
     Format-List
@@ -51,6 +59,7 @@ Keep the response short and operational:
 - Whether FH6 and `FH6_UDPort_Forwarder` are still alive.
 - For a pull, call out if the launch happened late or outside the 10-second window.
 - If useful, derive threshold timing from `_monotonic_s` in the JSONL, using the first near-stationary high-throttle sample as the launch reference.
+- For new captures, the wrapper should make the filename, `latest-fh6-capture.txt`, and JSONL `_label` agree. For old captures, use analyzer `identity_slug`/car fields ahead of stale row `_label`.
 
 Known clean examples from this project:
 

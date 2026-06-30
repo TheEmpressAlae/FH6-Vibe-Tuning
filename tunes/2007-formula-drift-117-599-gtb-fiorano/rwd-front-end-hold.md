@@ -100,7 +100,7 @@ rotation available without relying only on throttle violence.
 
 ## Telemetry Review - 2026-06-27 Sloppy 10s Run
 
-Source: `telemetry/20260627-212410-miata-drag-10s-fh6-telemetry.jsonl`
+Source: `telemetry/20260627-212410-2007-formula-drift-117-599-gtb-fiorano-s1-763-rwd-10s-fh6-telemetry.jsonl`
 
 ### Summary
 
@@ -144,7 +144,7 @@ secondary front-contact patch adjustment:
 
 ## Telemetry Review - 2026-06-27 Fresh Pull
 
-Source: `telemetry/20260627-213253-miata-drag-10s-fh6-telemetry.jsonl`
+Source: `telemetry/20260627-213253-2007-formula-drift-117-599-gtb-fiorano-s1-763-rwd-10s-fh6-telemetry.jsonl`
 
 ### Summary
 
@@ -190,7 +190,7 @@ Do not apply both at once.
 
 ## Telemetry Review - 2026-06-27 Launch Pull
 
-Source: `telemetry/20260627-213940-miata-drag-10s-fh6-telemetry.jsonl`
+Source: `telemetry/20260627-213940-2007-formula-drift-117-599-gtb-fiorano-s1-763-rwd-10s-fh6-telemetry.jsonl`
 
 ### Summary
 
@@ -229,7 +229,7 @@ before changing pressure, differential, camber, or toe again.
 
 ## Telemetry Review - 2026-06-27 Clean Mid-Smoke Pull
 
-Source: `telemetry/20260627-215405-miata-drag-10s-fh6-telemetry.jsonl`
+Source: `telemetry/20260627-215405-2007-formula-drift-117-599-gtb-fiorano-s1-763-rwd-10s-fh6-telemetry.jsonl`
 
 ### Summary
 
@@ -277,7 +277,7 @@ to overcook.
 
 ## Telemetry Review - 2026-06-27 Chaos Recovery Pull
 
-Source: `telemetry/20260627-220105-miata-drag-10s-fh6-telemetry.jsonl`
+Source: `telemetry/20260627-220105-2007-formula-drift-117-599-gtb-fiorano-s1-763-rwd-10s-fh6-telemetry.jsonl`
 
 ### Driver Context
 
@@ -345,7 +345,7 @@ differential.
 ## Telemetry Note - Gear Field Mapping
 
 In the U-turn/recovery capture from
-`telemetry/20260627-214740-miata-drag-10s-fh6-telemetry.jsonl`, the car was
+`telemetry/20260627-214740-2007-formula-drift-117-599-gtb-fiorano-s1-763-rwd-10s-fh6-telemetry.jsonl`, the car was
 visibly in 3rd gear on the runway while the raw telemetry reported `Gear = 2`.
 For this car and capture set, read the Data Out `Gear` field as a raw
 telemetry value, not the literal in-game gear label. Practical interpretation:
