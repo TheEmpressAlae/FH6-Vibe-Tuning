@@ -1,4 +1,4 @@
-# 1987 Pontiac Firebird Trans Am GTA - Drift-Drag Baseline
+# FH6 Pontiac Firebird Trans Am GTA 1987 - Drift-Drag Tune
 
 ## Context
 

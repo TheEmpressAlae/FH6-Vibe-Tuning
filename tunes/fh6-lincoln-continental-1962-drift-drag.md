@@ -1,4 +1,4 @@
-# 1962 Lincoln Continental - Drift-Drag Couch Opener
+# FH6 Lincoln Continental 1962 - Drift-Drag Tune
 
 ## Context
 

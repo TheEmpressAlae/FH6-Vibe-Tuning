@@ -147,10 +147,12 @@ CORNER_LABELS = {
 }
 
 KNOWN_CAR_SLUGS = {
-    1045: "1987-pontiac-firebird-trans-am-gta",
-    3249: "2007-formula-drift-117-599-gtb-fiorano",
-    3852: "1991-honda-beat",
-    4197: "1994-mazda-mx-5-miata-forza-edition",
+    1459: "fh6-chevrolet-bel-air-1957",
+    1586: "fh6-lincoln-continental-1962",
+    1045: "fh6-pontiac-firebird-trans-am-gta-1987",
+    3249: "fh6-formula-drift-117-599-gtb-fiorano-2007",
+    3852: "fh6-honda-beat-1991",
+    4197: "fh6-mazda-mx-5-miata-forza-edition-1994",
 }
 
 CLASS_SLUGS = {

@@ -16,9 +16,9 @@ under `tunes/`, lowercased and hyphenated. Example:
 | Vehicle / event | Recorded tune or result | Status |
 | --- | --- | --- |
 | 1957 Chevrolet Bel Air | [Drag tune completion](tunes/fh6-chevrolet-bel-air-1957-drag.md) | Complete: kilo drag and great air leap planted |
-| 1962 Lincoln Continental | [Drift-drag couch opener](tunes/1962-lincoln-continental/drift-drag-couch-opener.md); [AWD telemetry review](tunes/1962-lincoln-continental/awd-telemetry-review.md) | RWD opener archived; AWD test sequence documented, still front-limited |
-| 2007 Formula Drift #117 599 GTB Fiorano | Separate tune entries in `tunes/2007-formula-drift-117-599-gtb-fiorano/` | RWD front-end hold field baseline |
-| 1987 Pontiac Firebird Trans Am GTA | [Drift-drag baseline](tunes/1987-pontiac-firebird-trans-am-gta/drift-drag-baseline.md) | v1.3 dry baseline; pending rain-free telemetry |
+| 1962 Lincoln Continental | [Drift-drag tune](tunes/fh6-lincoln-continental-1962-drift-drag.md); [AWD telemetry review](tunes/fh6-lincoln-continental-1962-awd-telemetry-review.md) | RWD opener archived; AWD test sequence documented, still front-limited |
+| 2007 Formula Drift #117 599 GTB Fiorano | [RWD dirt drift](tunes/fh6-formula-drift-117-599-gtb-fiorano-2007-rwd-dirt-drift.md); [AWD snow drift](tunes/fh6-formula-drift-117-599-gtb-fiorano-2007-awd-snow-drift.md); [AWD rally drift reference](tunes/fh6-formula-drift-117-599-gtb-fiorano-2007-awd-rally-drift-reference.md) | RWD dirt drift field baseline |
+| 1987 Pontiac Firebird Trans Am GTA | [Drift-drag tune](tunes/fh6-pontiac-firebird-trans-am-gta-1987-drift-drag.md) | v1.3 dry baseline; pending rain-free telemetry |
 | Deep Forest Seasonal Speed Zone | BMW M1 shared-tune completion result | Complete |
 | 1985 Toyota Sprinter Trueno GT Apex | B 600 Deep Forest lightweight baseline; S1 AWD drift package | B 600 unsuccessful; S1 drift awaiting field test |
 | 1982 Porsche 911 Turbo 3.3 | B 600 Deep Forest baseline | Field tested; unsuccessful |
@@ -78,7 +78,7 @@ delaying rear rotation enough for the driver to catch it cleanly.
 
 ### Tune Entry Files
 
-- [Drift-drag baseline](tunes/1987-pontiac-firebird-trans-am-gta/drift-drag-baseline.md)
+- [Drift-drag tune](tunes/fh6-pontiac-firebird-trans-am-gta-1987-drift-drag.md)
   is the current dry baseline.
 
 ### Drift-Drag Baseline
@@ -196,14 +196,14 @@ Keep the throaty V12 character unless a later class target requires a swap.
 
 ### Tune Entry Files
 
-- [RWD front-end hold](tunes/2007-formula-drift-117-599-gtb-fiorano/rwd-front-end-hold.md)
+- [RWD dirt drift](tunes/fh6-formula-drift-117-599-gtb-fiorano-2007-rwd-dirt-drift.md)
   is the current field baseline.
-- [AWD snow 2nd-gear](tunes/2007-formula-drift-117-599-gtb-fiorano/awd-snow-2nd-gear.md)
+- [AWD snow drift](tunes/fh6-formula-drift-117-599-gtb-fiorano-2007-awd-snow-drift.md)
   is the field-improved learning baseline.
-- [AWD rally 4.10 reference](tunes/2007-formula-drift-117-599-gtb-fiorano/awd-rally-4-10-reference.md)
+- [AWD rally drift reference](tunes/fh6-formula-drift-117-599-gtb-fiorano-2007-awd-rally-drift-reference.md)
   is the archived too-grippy reference.
 
-### Behemoth RWD Front-End Hold Revision
+### RWD Dirt Drift Revision
 
 **Status:** Current field baseline after full trigger throw was restored and
 RWD drift practice improved throttle confidence. Pressure, rear differential,
@@ -288,7 +288,7 @@ rear acceleration to `94-100%`. If entry rotation pushes the nose wide, lower
 rear deceleration to `12-15%`; if lift-off entries feel nervous, raise it to
 `20-22%`.
 
-### Behemoth AWD Dirt Drift Baseline
+### AWD Snow Drift Baseline
 
 **Status:** Hold for driver acclimation. First snow/5.00-final test produced a
 marked improvement and advanced the drift challenge by one star. Later review

@@ -1,4 +1,4 @@
-# 2007 Formula Drift #117 599 GTB Fiorano - AWD Snow 2nd-Gear
+# FH6 Formula Drift #117 599 GTB Fiorano 2007 - AWD Snow Drift
 
 ## Context
 

@@ -1,4 +1,4 @@
-# 2007 Formula Drift #117 599 GTB Fiorano - RWD Front-End Hold
+# FH6 Formula Drift #117 599 GTB Fiorano 2007 - RWD Dirt Drift
 
 ## Context
 
